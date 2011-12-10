@@ -14,8 +14,8 @@ development:
   reconnect: false
   database: antientropy_development
   pool: 5
-  username: root
-  password: ts4Eqq
+  username: antientropy_user
+  password: seZedeRumubrEpU3eqat
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -27,8 +27,8 @@ test:
   reconnect: false
   database: antientropy_test
   pool: 5
-  username: root
-  password: ts4Eqq
+  username: antientropy_user
+  password: seZedeRumubrEpU3eqat
   socket: /tmp/mysql.sock
 
 production:
@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: antientropy_production
   pool: 5
-  username: root
-  password: ts4Eqq
+  username: antientropy_user
+  password: seZedeRumubrEpU3eqat
   socket: /tmp/mysql.sock
