@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @user = User.first
   end
 
   # GET /users/1
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
-      redirect_to(:users, :notice => 'Registration successfull. Check your email for activation instructions.')
+      redirect_to(:login, :notice => 'Registration successfull. Check your email for activation instructions.')
     else
       render :action => "new"
     end

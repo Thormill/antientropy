@@ -1,4 +1,7 @@
 <h1>Login</h1>
+<% if logged_in? %>
+<p>Вы вошли как, <%= current_user.email %> [ <%= link_to 'Выход', logout_path %> ]</p>
+<% end %>
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
 <%= render 'form' %>
