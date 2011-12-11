@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   before_filter :require_login_from_http_basic, :only => [:login_from_http_basic]
-  skip_before_filter :require_login, :only => [:index, :new, :create, :activate, :login_from_http_basic]
+  before_filter :require_login, :only => [:index]
+  skip_before_filter :require_login, :only => [:new, :create, :activate, :login_from_http_basic]
+
   # GET /users
-  # GET /users.xml
   def index
     @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
   end
 
   # GET /users/1
