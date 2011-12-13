@@ -1,0 +1,87 @@
+/*= require_self
+ *= require_tree . */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
+  font-family: 'CalibriRegular', Arial, Helvetica, sans-serif
+  font-size: 12px
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+body
+  background: #000
+
+.wrapper
+  overflow: hidden
+  
+.grad-left
+  position: fixed
+  background: image-url('grad_left.png') 0 0 repeat-y
+  width: 215px
+  top: 35px
+  left: 0
+  bottom: 0
+  z-index: 3
+
+.grad-right
+  position: fixed
+  background: image-url('grad_right.png') 0 0 repeat-y
+  width: 215px
+  top: 35px
+  right: 0
+  bottom: 0
+  z-index: 3
+  
+.top-line
+  position: relative
+  height: 35px
+  background: black
+  font-size: 12px
+
+.top-line .username-password
+  position: absolute
+  top: 6px
+  right: 100px
+
+.top-line .username-password input
+  color: #a6a6a6
+  background: #555
+  border: 1px solid #555
+  border-radius: 2px
+
+.top-line .username-password input[type=checkbox]
+  position: relative
+  top: 2px
+
+.top-line .helpful-link
+  position: absolute
+  top: 9px
+  left: 100px
+  color: #6e6e6e
+
+.top-line a
+  color: #b7b7b7
+
+.top-line a:hover
+  color: #b7b7b7
+  
+.top-logo
+  background: image-url('logo_bg.png')
+  color: #fff
+  height: 85px

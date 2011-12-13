@@ -1,5 +1,5 @@
 Antientropy::Application.routes.draw do
-  root :to => 'user_sessions#new'
+  root :to => 'home#index'
 
   resources :users, :admins do
     collection do
