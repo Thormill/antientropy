@@ -1,5 +1,5 @@
 class Admin::QuestsController < ApplicationController
-  #before_filter :authenticate
+  before_filter :authenticate
 
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
@@ -27,7 +27,7 @@ class Admin::QuestsController < ApplicationController
             redirect_to new_admin_quest_path(@quest), :notice => 'mistake'
     end
   end
-  
+
   def edit
     @quest = Quest.find(params[:id])
   end
