@@ -22,9 +22,9 @@ class Admin::QuestsController < ApplicationController
   def create
     @quest = Quest.new(params[:quest])
     if(@quest.save)
-            render :action => "new", :notice => "Yeah"
+            redirect_to admin_quests_path, :notice => 'Yeah!'
     else
-            render :action => "new", :notice => "=("
+            redirect_to new_admin_quest_path(@quest), :notice => 'mistake'
     end
   end
   
@@ -34,9 +34,8 @@ class Admin::QuestsController < ApplicationController
 
   def update
     @quest = Quest.find(params[:id])
-
     if @quest.update_attributes(params[:quest])
-      redirect_to admin_quest_path(@quest), :notice => 'sdads'
+      redirect_to admin_quest_path(@quest), :notice => 'success'
     else
       render :action => "edit"
     end

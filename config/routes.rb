@@ -20,7 +20,8 @@ Antientropy::Application.routes.draw do
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'register' => 'users#new', :as => :register
-  #match 'admin/quests/new' => 'admin/quests#new', :as => :admin_quests_new
+  match 'admin' => 'admin#index', :as => :admin
+
 
   
   resource :oauth do
