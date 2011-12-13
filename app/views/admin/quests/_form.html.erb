@@ -1,0 +1,9 @@
+<%= form_for [:admin, @quest] do |f| %>
+<%=   f.label          "Заголовок" %><br>
+<%=   f.text_field     :quest_title %><br>
+<%=   f.label          "Текст" %><br>
+<%=   f.text_area      :quest_text %><br>
+<%=   f.label          "Локация(айди)" %><br>
+<%=   f.text_field     :location_id %><br>
+<%=   f.submit "Заделать квест" %>
+<%  end %>

@@ -11,7 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209183111) do
+ActiveRecord::Schema.define(:version => 20111213101756) do
+
+  create_table "maps", :force => true do |t|
+    t.string   "location_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quest_assigns", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "quest_id"
+    t.integer  "quest_status_id"
+    t.string   "quest_statuses"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quests", :force => true do |t|
+    t.string   "quest_title"
+    t.string   "quest_text"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_notes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "quest_id"
+    t.string   "note_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_parties", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "user_status_id"
+    t.string   "user_statuses"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_providers", :force => true do |t|
     t.integer  "user_id",    :null => false

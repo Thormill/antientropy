@@ -1,0 +1,27 @@
+<h1>Список квестов</h1>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Text</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @quests.each do |quest| %>
+  <tr>
+    <td><%= quest.id %></td>
+    <td><%= quest.quest_title %></td>
+    <td><%= quest.quest_text %></td>
+    <td><%= quest.location_id %></td>
+    <td><%= link_to 'Show', admin_quest_path(quest) %></td>
+    <td><%= link_to 'Edit', edit_admin_quest_path(quest) %></td>
+    <td><%= link_to 'Destroy', admin_quest_path(quest), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
