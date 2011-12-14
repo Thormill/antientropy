@@ -9,8 +9,12 @@ class User < ActiveRecord::Base
 
   validates_length_of :password, :minimum => 3, :message => "password must be at least 3 characters long", :if => :password
   validates_confirmation_of :password, :message => "should match confirmation", :if => :password
-  
-  def pick_quest(quest_id)
-    self.quest_assigns.create(:quest_id => quest_id)    
+
+  def accept_quest(q_id)
+    self.quest_assigns.create(:quest_id => q_id, :quest_status_id => 0)
+  end
+
+  def complete_quest(q_id)
+    self.quest_assigns.find_by_quest_id(q_id).update_attribute(:quest_status_id, 1)
   end
 end
