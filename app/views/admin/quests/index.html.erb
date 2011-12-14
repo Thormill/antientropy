@@ -3,17 +3,17 @@
 <p id="alert"><%= alert %></p>
 <p><%= link_to 'Запилить еще один', new_admin_quest_path %></p>
 
-<table>
+<table class="quest_list">
   <tr>
-    <th>#</th>
-    <th>Заголовок</th>
-    <th>Текст</th>
-    <th>Тип</th>
-    <th>№ локации</th>
-    <th>Время на выполнение</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style="width:5%;">#</th>
+    <th style="width:15%;">Заголовок</th>
+    <th style="width:30%;">Текст</th>
+    <th style="width:10%;">Тип</th>
+    <th style="width:5%;">№ локации</th>
+    <th style="width:10%;">Время на выполнение</th>
+    <th style="width:5%;"></th>
+    <th style="width:5%;"></th>
+    <th style="width:5%;"></th>
   </tr>
 <% @quests.each do |quest| %>
   <tr>

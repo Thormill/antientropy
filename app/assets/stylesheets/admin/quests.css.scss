@@ -1,3 +1,19 @@
-// Place all the styles related to the admin::quests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.quest_list {
+  width: 75%;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.quest_list th {
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #888;
+}
+
+.quest_list tr {
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+}
