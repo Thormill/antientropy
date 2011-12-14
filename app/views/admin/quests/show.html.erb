@@ -12,6 +12,11 @@
   <b>Локация:</b>
   <%= @quest.location_id %>
 </p>
+<p>
+  <b>Время на выполнение:</b>
+  <%= @quest.time_to_make %>
+</p>
+
 
 <%= link_to 'Edit', edit_admin_quest_path(@quest) %> |
 <%= link_to 'Back', admin_quests_path %>

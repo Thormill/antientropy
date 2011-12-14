@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20111213101756) do
     t.string   "quest_title"
     t.string   "quest_text"
     t.integer  "location_id"
+    t.integer  "time_to_make"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

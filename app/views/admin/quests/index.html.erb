@@ -6,9 +6,10 @@
 <table>
   <tr>
     <th>#</th>
-    <th>Title</th>
-    <th>Text</th>
-    <th>Location</th>
+    <th>Заголовок</th>
+    <th>Текст</th>
+    <th>№ локации</th>
+    <th>Время на выполнение</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,7 @@
     <td><%= quest.quest_title %></td>
     <td><%= quest.quest_text %></td>
     <td><%= quest.location_id %></td>
+    <td><%= quest.time_to_make %></td>
     <td><%= link_to 'Show', admin_quest_path(quest) %></td>
     <td><%= link_to 'Edit', edit_admin_quest_path(quest) %></td>
     <td><%= link_to 'Destroy', admin_quest_path(quest), :confirm => 'Are you sure?', :method => :delete %></td>
