@@ -8,6 +8,7 @@
     <th>#</th>
     <th>Заголовок</th>
     <th>Текст</th>
+    <th>Оффлайн</th>
     <th>№ локации</th>
     <th>Время на выполнение</th>
     <th></th>
@@ -17,8 +18,8 @@
 <% @quests.each do |quest| %>
   <tr>
     <td><%= quest.id %></td>
-    <td><%= quest.quest_title %></td>
-    <td><%= quest.quest_text %></td>
+    <td><%= quest.title %></td>
+    <td><%= quest.text %></td>
     <td><%= quest.location_id %></td>
     <td><%= quest.time_to_make %></td>
     <td><%= link_to 'Show', admin_quest_path(quest) %></td>

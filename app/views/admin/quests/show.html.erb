@@ -2,11 +2,15 @@
 
 <p>
   <b>Заголовок:</b>
-  <%= @quest.quest_title %>
+  <%= @quest.title %>
 </p>
 <p>
   <b>Текст:</b>
-  <%= @quest.quest_text %>
+  <%= @quest.text %>
+</p>
+<p>
+  <b>Оффлайн:</b>
+  <%= check_box(@quest.offline, nil, options = {:checked => @quest.offline}, checked_value = 1, unchecked_value = 0)  %>
 </p>
 <p>
   <b>Локация:</b>
