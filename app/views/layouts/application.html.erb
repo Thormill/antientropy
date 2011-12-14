@@ -8,31 +8,70 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="grad-left"></div>
-  <div class="grad-right"></div>
   <div class="top-line">
-
-  <% if logged_in?%>
-    <div class="username-password">Вы вошли как </div>
-  <% else %>
-    <div class="helpful-link">
-      <%=  'Добро пожаловать' %> |
-      <%= link_to 'Регистрация' %> |
-      <%= link_to 'Все забыл' %>
-    </div>
-    <%= form_tag :login, :method => :post, :class => "username-password" do %>
-      <%= text_field_tag :email, nil, :placeholder => "Логин" %>
-      <%= password_field_tag :password, nil, :placeholder => "Пароль" %>
-      <%= check_box_tag :remember, nil, nil, :title => "Запомнить меня" %>
-      <%= submit_tag '>' %>
-    <% end %>
-  <% end%>
+      
+    <% if logged_in?%>
+      <div class="username-password">Вы вошли как <%= current_user.email %> </div>
+    <% else %>
+      <div class="helpful-link">
+        <%=  'Добро пожаловать' %> |
+        <%= link_to 'Регистрация' %> |
+        <%= link_to 'Все забыл' %>
+      </div>
+    <% end%>
 
   </div>
-  <div class="top-logo"></div>
 
-  <%= yield %>
+  <div class="gradient grad-left"></div>
+  <div class="gradient grad-right"></div>
+  <div class="control ctrl-prev"></div>
+  <div class="control ctrl-next"></div>
 
+  <div class="content">
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    f<br/>
+    <%= yield %>
+  </div>
+
+  <div class="footer"></div>
 </div>
 </body>
 </html>

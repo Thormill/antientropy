@@ -17,8 +17,9 @@ table, caption, tbody, tfoot, thead, tr, th, td
   font-size: 100%
   vertical-align: baseline
   background: transparent
-  font-family: 'CalibriRegular', Arial, Helvetica, sans-serif
+  font-family: 'MyriadProLight', Arial, Helvetica, sans-serif
   font-size: 12px
+  color: white
 
 table
   border-collapse: collapse
@@ -29,50 +30,33 @@ body
 
 .wrapper
   overflow: hidden
+
+.gradient
+  position: fixed
+  top: 85px
+  bottom: 0
+  z-index: 2
   
 .grad-left
-  position: fixed
   background: image-url('grad_left.png') 0 0 repeat-y
-  width: 215px
-  top: 35px
+  width: 150px
   left: 0
-  bottom: 0
-  z-index: 3
 
 .grad-right
-  position: fixed
   background: image-url('grad_right.png') 0 0 repeat-y
-  width: 215px
-  top: 35px
+  width: 150px
   right: 0
-  bottom: 0
-  z-index: 3
   
 .top-line
   position: relative
-  height: 35px
+  height: 85px
   background: black
   font-size: 12px
 
-.top-line .username-password
-  position: absolute
-  top: 6px
-  right: 100px
-
-.top-line .username-password input
-  color: #a6a6a6
-  background: #555
-  border: 1px solid #555
-  border-radius: 2px
-
-.top-line .username-password input[type=checkbox]
-  position: relative
-  top: 2px
-
 .top-line .helpful-link
   position: absolute
-  top: 9px
-  left: 100px
+  top: 30px
+  right: 100px
   color: #6e6e6e
 
 .top-line a
@@ -80,8 +64,32 @@ body
 
 .top-line a:hover
   color: #b7b7b7
+
+.control
+  position: fixed
+  top: 48%
+  width: 22px
+  height: 40px
+  background: image-url('left_right_ctrls.png')
+  cursor: pointer
+  z-index: 3
+
+.ctrl-prev
+  left: 60px
+  background-position: 0 -40px
+
+.ctrl-next
+  right: 60px
+  background-position: 0 0
   
-.top-logo
-  background: image-url('logo_bg.png')
-  color: #fff
-  height: 85px
+.content
+  padding: 0 0 150px 150px
+  float: left
+
+.footer
+  background: image-url('foot_bg.png')
+  height: 150px
+  position: fixed
+  left: 0
+  bottom: 0
+  right: 0
