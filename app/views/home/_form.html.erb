@@ -1,0 +1,6 @@
+<%= form_tag :login, :method => :post, :class => "username-password" do %>
+    <%= text_field_tag :email, nil, :placeholder => "Логин" %>
+    <%= password_field_tag :password, nil, :placeholder => "Пароль" %>
+    <%= check_box_tag :remember, nil, nil, :title => "Запомнить меня" %>
+    <%= submit_tag '>' %>
+<% end %>
