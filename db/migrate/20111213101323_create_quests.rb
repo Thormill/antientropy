@@ -5,7 +5,7 @@ class CreateQuests < ActiveRecord::Migration
       t.string :text
       t.integer :location_id
       t.integer :time_to_make
-      t.boolean :offline
+      t.integer :qtype
       t.timestamps
     end
   end

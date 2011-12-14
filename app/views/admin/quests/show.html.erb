@@ -9,8 +9,8 @@
   <%= @quest.text %>
 </p>
 <p>
-  <b>Оффлайн:</b>
-  <%= check_box(@quest.offline, nil, options = {:checked => @quest.offline}, checked_value = 1, unchecked_value = 0)  %>
+  <b>Тип квеста:</b>
+  <%=  QuestTypes.find(@quest.qtype).name %>
 </p>
 <p>
   <b>Локация:</b>
