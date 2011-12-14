@@ -1,6 +1,5 @@
 <%  aTypeList = []  %>
-<%  aTypes = QuestTypes.all  %>
-<%  aTypes.each do |t|  %>
+<%  QuestTypes.all.each do |t|  %>
 <%    aTypeList.push([t.name, t.id])  %>
 <%  end  %>
 

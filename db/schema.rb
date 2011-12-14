@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(:version => 20111214125346) do
     t.integer  "user_id"
     t.integer  "quest_id"
     t.integer  "quest_status_id"
-    t.string   "quest_statuses"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

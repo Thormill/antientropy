@@ -4,7 +4,6 @@ class CreateQuestAssigns < ActiveRecord::Migration
       t.integer :user_id
       t.integer :quest_id
       t.integer :quest_status_id
-      t.string :quest_statuses
 
       t.timestamps
     end
