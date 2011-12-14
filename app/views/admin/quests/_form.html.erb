@@ -1,8 +1,9 @@
 <%= form_for [:admin, @quest] do |f| %>
 <%=   f.label          "Заголовок" %><br>
-<%=   f.text_field     :quest_title %><br>
+<%=   f.text_field     :title %><br>
 <%=   f.label          "Текст" %><br>
-<%=   f.text_area      :quest_text %><br>
+<%=   f.text_area      :text %><br>
+<%=   f.check_box(:offline, {:checked => @quest.offline}, 1, 0) %>
 <%=   f.label          "Локация(айди)" %><br>
 <%=   f.text_field     :location_id %><br>
 <%=   f.label          "Время на выполнение" %><br>
