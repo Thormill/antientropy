@@ -7,3 +7,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+//Animate content
+  $(document).ready(function() {
+    $("[nav-item-id='1']").click(function() {
+      $("#nav-page-holder").animate({
+        marginLeft: -0
+      });
+
+      $("[nav-item-id='1']").addClass("active");
+      $("[nav-item-id='2']").removeClass("active");
+    });
+
+    $("[nav-item-id='2']").click(function() {
+      $("#nav-page-holder").animate({
+        marginLeft: -1600
+      });
+
+      $("[nav-item-id='2']").addClass("active");
+      $("[nav-item-id='1']").removeClass("active");
+    });
+  });

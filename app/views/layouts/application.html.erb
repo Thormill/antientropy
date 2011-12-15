@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="wrapper">
-  <div class="top-line">
+<div id="wrapper">
+  <div id="top-line">
       
     <% if logged_in?%>
       <div class="username-password">Вы вошли как <%= current_user.email %> </div>
