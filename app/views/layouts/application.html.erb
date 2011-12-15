@@ -9,16 +9,14 @@
 <body>
 <div id="wrapper">
   <div id="top-line">
-      
-    <% if logged_in?%>
-      <div class="username-password">Вы вошли как <%= current_user.email %> </div>
-    <% else %>
-      <div class="helpful-link">
-        <%=  'Добро пожаловать' %> |
-        <%= link_to 'Регистрация' %>
-      </div>
-    <% end%>
 
+    <div class="greating">  
+    <% if logged_in?%>
+      Вы вошли как <%= current_user.email %>
+    <% else %>
+        <%=  'Добро пожаловать' %>
+    <% end%>
+    </div>
   </div>
 
   <div class="gradient grad-left"></div>
