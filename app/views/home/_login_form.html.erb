@@ -1,23 +1,23 @@
-<%= form_tag :login, :method => :post, :class => "form-login" do %>
+<%= form_tag :login, :method => :post, :class => "form" do %>
 <dl>
   <dt>
     <strong><%= label_tag :email, 'E-mail:' %></strong>
   </dt>
   <dd>
-    <%= text_field_tag :email, nil, :class => "login-input" %>
+    <%= text_field_tag :email, nil, :class => "form-input" %>
   </dd>
   <dt>
     <strong><%= label_tag :email, 'Пароль:' %></strong>
   </dt>
   <dd>
-    <%= password_field_tag :password, nil, :class => "login-input" %>
+    <%= password_field_tag :password, nil, :class => "form-input" %>
   </dd>
-  <div class="login-line">
+  <div class="form-line">
     <%= check_box_tag :remember %>
     <%= label_tag :remember, 'Запомнить меня' %>
     
     <%= link_to 'Забыли пароль?' %>
   </div>
-  <%= submit_tag 'Вход', :class => "big-g-button" %>
+  <%= submit_tag 'Вход', :class => "big-button anim-button big-g-button" %>
 
 <% end %>

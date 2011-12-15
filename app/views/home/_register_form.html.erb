@@ -1,29 +1,29 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_tag :register, :method => :post, :class => "form" do %>
+<dl>
+  <dt>
+    <strong><%= label_tag :email, 'E-mail:' %></strong>
+  </dt>
+  <dd>
+    <%= text_field_tag :email, nil, :class => "form-input" %>
+  </dd>
+  <dt>
+    <strong><%= label_tag :email, 'Пароль:' %></strong>
+  </dt>
+  <dd>
+    <%= password_field_tag :password, nil, :class => "form-input" %>
+  </dd>
+  <dt>
+    <strong><%= label_tag :email, 'Подтверждение пароля:' %></strong>
+  </dt>
+  <dd>
+    <%= password_field_tag :password, nil, :class => "form-input" %>
+  </dd>
+  <dt>
+    <strong><%= label_tag :name, 'Имя в игре' %></strong>
+  </dt>
+  <dd>
+    <%= text_field_tag :name, nil, :class => "form-input" %>
+  </dd>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= submit_tag 'Регистрация', :class => "big-button anim-button big-y-button" %>
 <% end %>

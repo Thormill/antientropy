@@ -14,12 +14,14 @@ Antientropy::Application.routes.draw do
     resources :quests
   end
 
-  resources :user_sessions
   resources :password_resets
 
-  match 'login' => 'user_sessions#new', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-  match 'register' => 'users#new', :as => :register
+# user session control
+  match 'login' => 'sessions#create', :as => :login
+  match 'logout' => 'sessions#destroy', :as => :logout
+  match 'register' => 'users#create', :as => :register
+
+  
   match 'admin' => 'admin#index', :as => :admin
 
 

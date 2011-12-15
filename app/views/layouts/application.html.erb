@@ -12,9 +12,9 @@
 
     <div class="greating">  
     <% if logged_in?%>
-      Вы вошли как <%= current_user.email %>
+      Вы вошли как <%= current_user.email %> [<%= link_to 'Выход', :logout %>]
     <% else %>
-        <%=  'Добро пожаловать' %>
+      Добро пожаловать
     <% end%>
     </div>
   </div>
