@@ -6,8 +6,6 @@
   <th>№ локации</th>
   <th>Время на выполнение</th>
   <th>&nbsp;</th>
-  <th>&nbsp;</th>
-  <th>&nbsp;</th>
 </tr>
 
 <% @quests.each do |quest| %>
@@ -17,9 +15,9 @@
     <td><%= QuestTypes.find(quest.qtype).name %></td>
     <td><%= quest.location_id %></td>
     <td><%= quest.time_to_make %></td>
-    <td><%= link_to 'Показать', admin_quest_path(quest), :remote => true %></td>
-    <td><%= link_to 'Редактировать', edit_admin_quest_path(quest), :remote => true %></td>
-    <td><%= link_to 'Удалить', admin_quest_path(quest), :remote => true, 
+    <td><%= link_to 'Показать', admin_quest_path(quest), :remote => true %>
+    <%= link_to 'Редактировать', edit_admin_quest_path(quest), :remote => true %>
+    <%= link_to 'Удалить', admin_quest_path(quest), :remote => true, 
             :confirm => 'Не передумали удалять?', :method => :delete %></td>
   </tr>
 <% end %>
