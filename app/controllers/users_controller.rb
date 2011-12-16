@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :only => [:index, :update]
-  skip_before_filter :require_login, :only => [:new, :create, :activate, :login_from_http_basic]
+  before_filter :require_login, :only => [:update]
+  skip_before_filter :require_login, :only => [:create, :activate]
 
   def create
     @user = User.new(params[:user])
-    @notice = @user.save ? I18n.t('user.registration.notice_done') : I18n.t('user.registration.notice_error')
+    @notice = @user.save ? I18n.t('user.registration.done') : I18n.t('user.registration.error')
 
     respond_to do |format|
       format.js

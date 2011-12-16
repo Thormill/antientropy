@@ -1,0 +1,27 @@
+var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+<% if @notice == I18n.t('user.login.done') %>
+  window.location = "/"
+<% else %>
+  $('#error-form').html('<span>Ошибка!</span> <%= @notice %>')
+<% end %>
+
+if ($('#email').val() == '') {
+  $('#error-email').html('<span>Ошибка!</span> Введите e-mail')
+} else {
+  if(regexp_email.test($('#email').val()) == false) { 
+    $('#error-email').html('<span>Ошибка!</span> Введите корректный e-mail')
+  } else {
+    $('#error-email').html('')
+  }
+}
+
+if ($('#password').val() == '') {
+  $('#error-password').html('<span>Ошибка!</span> Введите пароль')
+} else {
+  if ($('#password').val().length < 4) {
+    $('#error-password').html('<span>Ошибка!</span> Пароль не может быть короче трех символов')
+  } else {
+    $('#error-password').html('')
+  }
+}

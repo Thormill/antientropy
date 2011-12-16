@@ -12,9 +12,9 @@
 
     <div class="greating">  
     <% if logged_in?%>
-      Вы вошли как <%= current_user.email %> [<%= link_to 'Выход', :logout %>]
+      Вы вошли как <%= current_user.name %> [<%= link_to 'Выход', :logout %>]
     <% else %>
-      <%= Greetings.find(rand(Greetings.count)+1).text %>
+      <%= @greeting %>
     <% end%>
     </div>
   </div>

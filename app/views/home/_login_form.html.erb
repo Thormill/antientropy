@@ -1,13 +1,22 @@
-<%= form_tag(:login, method: :post, class: 'form') do %>
+<%= form_tag(:login, method: :post, remote: true, class: 'form') do %>
 <dl>
   <dt>
+    <div id="error-form" class="form-error"></div>
+  </dt>
+  <dt>
     <strong><%= label_tag :email, 'E-mail:' %></strong>
+  </dt>
+  <dt>
+    <div id="error-email" class="form-error"></div>
   </dt>
   <dd>
     <%= text_field_tag :email, nil, :class => "form-input" %>
   </dd>
   <dt>
     <strong><%= label_tag :email, 'Пароль:' %></strong>
+  </dt>
+  <dt>
+    <div id="error-password" class="form-error"></div>
   </dt>
   <dd>
     <%= password_field_tag :password, nil, :class => "form-input" %>
