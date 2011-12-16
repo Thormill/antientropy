@@ -23,8 +23,8 @@ Antientropy::Application.routes.draw do
 
   
   match 'admin' => 'admin#index', :as => :admin
-
-
+  match 'admin/new_quest' => 'admin/quests#new', as: :new_quest
+  match 'admin/index' => 'admin/quests#index', as: :show_quests
   
   resource :oauth do
     get :callback

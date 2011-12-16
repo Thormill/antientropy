@@ -3,7 +3,7 @@
 <%    aTypeList.push([t.name, t.id])  %>
 <%  end  %>
 
-<%= form_for [:admin, @quest], :remote => true do |f| %>
+<%= form_for [:admin, @quest] do |f| %>
 <%=   f.label          "Заголовок" %><br>
 <%=   f.text_field     :title %><br>
 <%=   f.label          "Текст" %><br>
@@ -13,5 +13,5 @@
 <%=   f.text_field     :location_id %><br>
 <%=   f.label          "Время на выполнение" %><br>
 <%=   f.text_field     :time_to_make %><br>
-<%=   f.submit "Создать квест" %>
+<%=   f.submit "Заделать квест" %>
 <%  end %>

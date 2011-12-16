@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Заголовок:</b>
   <%= @quest.title %>
@@ -20,7 +18,6 @@
   <b>Время на выполнение:</b>
   <%= @quest.time_to_make %>
 </p>
-
-
-<%= link_to 'Edit', edit_admin_quest_path(@quest) %> |
-<%= link_to 'Back', admin_quests_path %>
+<%= link_to 'Редактировать', edit_admin_quest_path(@quest), :remote => true %> | 
+<%= link_to 'Удалить', admin_quest_path(@quest), :remote => true, 
+            :confirm => 'Вы не передумали удалять квест?', :method => :delete %>
