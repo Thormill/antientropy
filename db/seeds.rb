@@ -10,3 +10,7 @@ Quest.create(:title => 'Беги за белым кроликом...', :text => 
 QuestTypes.create(:name => 'Online')
 QuestTypes.create(:name => 'Offline')
 User.create(:email => 'admin', :password => 'admin').activate!
+Greetings.create(:text => 'Приветики')
+Greetings.create(:text => 'Ку')
+Greetings.create(:text => 'Приветствую')
+Greetings.create(:text => 'Добрый день')
