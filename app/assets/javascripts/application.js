@@ -32,7 +32,7 @@ $(document).ready(function() {
   })
 
   $('[nav-item-id=2]').click(function() {
-    $('#nav-page-holder').animate({ marginLeft: -w * 1 })
+    $('#nav-page-holder').animate({ marginLeft: -w })
 
     $('[nav-item-id=2]').addClass('active')
     $('[nav-item-id=1]').removeClass('active')

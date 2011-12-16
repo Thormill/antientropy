@@ -14,7 +14,7 @@
     <% if logged_in?%>
       Вы вошли как <%= current_user.email %> [<%= link_to 'Выход', :logout %>]
     <% else %>
-      Добро пожаловать
+      <%= Greetings.find(rand(Greetings.count)+1).text %>
     <% end%>
     </div>
   </div>

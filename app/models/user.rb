@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :providers_attributes
+  attr_accessible :email, :name, :password, :password_confirmation, :providers_attributes
 
   has_many :providers, :class_name => "UserProvider", :dependent => :destroy
   has_many :quest_assigns

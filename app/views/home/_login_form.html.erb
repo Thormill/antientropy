@@ -1,4 +1,4 @@
-<%= form_tag :login, :method => :post, :class => "form" do %>
+<%= form_tag(:login, method: :post, class: 'form') do %>
 <dl>
   <dt>
     <strong><%= label_tag :email, 'E-mail:' %></strong>
@@ -15,9 +15,8 @@
   <div class="form-line">
     <%= check_box_tag :remember %>
     <%= label_tag :remember, 'Запомнить меня' %>
-    
     <%= link_to 'Забыли пароль?' %>
   </div>
-  <%= submit_tag 'Вход', :class => "big-button anim-button big-g-button" %>
+  <%= submit_tag 'Вход', :class => "big-button anim-button big-g-button", :remote => true %>
 
 <% end %>

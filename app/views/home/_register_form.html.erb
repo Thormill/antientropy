@@ -1,29 +1,29 @@
-<%= form_tag :register, :method => :post, :class => "form" do %>
+<%= form_for(@user, url: :register, remote: true, html: { id: 'form-register', class: 'form' }) do |f|%>
 <dl>
   <dt>
-    <strong><%= label_tag :email, 'E-mail:' %></strong>
+    <strong><%= f.label :email, 'E-mail:' %></strong>
   </dt>
   <dd>
-    <%= text_field_tag :email, nil, :class => "form-input" %>
+    <%= f.text_field :email, class: 'form-input' %>
   </dd>
   <dt>
-    <strong><%= label_tag :email, 'Пароль:' %></strong>
+    <strong><%= f.label :password, 'Пароль:' %></strong>
   </dt>
   <dd>
-    <%= password_field_tag :password, nil, :class => "form-input" %>
+    <%= f.password_field :password, class: 'form-input' %>
   </dd>
   <dt>
-    <strong><%= label_tag :email, 'Подтверждение пароля:' %></strong>
+    <strong><%= f.label :password_confirmation, 'Подтверждение пароля:' %></strong>
   </dt>
   <dd>
-    <%= password_field_tag :password, nil, :class => "form-input" %>
+    <%= f.password_field :password_confirmation, class: 'form-input' %>
   </dd>
   <dt>
-    <strong><%= label_tag :name, 'Имя в игре' %></strong>
+    <strong><%= f.label :name, 'Имя в игре' %></strong>
   </dt>
   <dd>
-    <%= text_field_tag :name, nil, :class => "form-input" %>
+    <%= f.text_field :name, class: 'form-input' %>
   </dd>
 
-  <%= submit_tag 'Регистрация', :class => "big-button anim-button big-y-button" %>
+  <%= f.submit 'Регистрация', class: 'big-button anim-button big-y-button' %>
 <% end %>

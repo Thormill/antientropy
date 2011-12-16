@@ -2,6 +2,7 @@
   <ul>
     <li nav-item-id="1" class="active">Вход</li>
     <li nav-item-id="2">Регистрация</li>
+    <li nav-item-id="3">Об игре</li>
   </ul>
 </div>
 
@@ -9,23 +10,23 @@
   <div id="nav-page-holder">
 
     <div class="nav-page" nav-page-id="1">
+      <div class="form-border green" style="width:360px">
+        <%= render 'login_form' %>
+      </div>
+    </div>
+    
+    <div class="nav-page" nav-page-id="2">
+      <div class="form-border yellow" style="width:360px">
+        <%= render 'register_form' %>
+      </div>
+    </div>
+
+    <div class="nav-page" nav-page-id="3">
       <div class="form-border blue" style="width:360px">
         Об игре
       </div>
     </div>
 
-
-    <div class="nav-page" nav-page-id="2">
-      <div class="form-border green" style="width:360px">
-        <%= render 'login_form' %>
-      </div>
-    </div>
-
-    <div class="nav-page" nav-page-id="3">
-      <div class="form-border yellow" style="width:360px">
-        <%= render 'register_form' %>
-      </div>
-    </div>
     
   </div>
 </div>

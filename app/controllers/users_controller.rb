@@ -4,11 +4,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @notice = @user.save ? I18n.t('user.registration.notice_done') : I18n.t('user.registration.notice_error')
 
-    if @user.save
-      redirect_to(:login, :notice => 'Registration successfull. Check your email for activation instructions.')
-    else
-      render :action => "new"
+    respond_to do |format|
+      format.js
     end
   end
 
