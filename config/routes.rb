@@ -21,8 +21,8 @@ Antientropy::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'register' => 'users#new', :as => :register
   match 'admin' => 'admin#index', :as => :admin
-  match 'admin/new_quest' => 'admin#new_quest'
-
+  match 'admin/new_quest' => 'admin/quests#new', as: :new_quest
+  match 'admin/index' => 'admin/quests#index', as: :show_quests
   
   resource :oauth do
     get :callback

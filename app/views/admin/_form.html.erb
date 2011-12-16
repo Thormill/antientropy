@@ -3,7 +3,7 @@
 <%    aTypeList.push([t.name, t.id])  %>
 <%  end  %>
 
-<%= form_for [:admin, @quest], :remote => true do |f| %>
+<%= form_for [:admin, @quest] do |f| %>
 <%=   f.label          "Заголовок" %><br>
 <%=   f.text_field     :title %><br>
 <%=   f.label          "Текст" %><br>

@@ -11,7 +11,9 @@
     <div class="nav-page" nav-page-id="1">
       <div class="form-border">
         <div>
-          <%= render :template => "admin/quests/index" %> 
+          <%= link_to 'Новый', new_quest_path, :remote => true %>
+          <%= link_to 'Список', show_quests_path, :remote => true %>
+          <div id="quest_holder"></div>
         </div>
       </div>
     </div>

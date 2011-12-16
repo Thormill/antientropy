@@ -13,10 +13,5 @@ class AdminController < ApplicationController
       page.replace_html '1', :template => 'admin/quests/index'
     end
   end
-  
-  def new_quest      
-    respond_to do |format|
-      format.js {}
-    end
-  end
+
 end
