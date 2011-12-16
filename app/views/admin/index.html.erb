@@ -20,7 +20,11 @@
 
     <div class="nav-page" nav-page-id="2">
       <div class="form-border">
-        Пользователи
+        <div>
+          <%= link_to 'Новый', '#', :remote => true %>
+          <%= link_to 'Список', '#', :remote => true %>
+          <div id="user_holder"></div>
+        </div>
       </div>
     </div>
 
