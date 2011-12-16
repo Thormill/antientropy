@@ -9,9 +9,6 @@ class AdminController < ApplicationController
 
   def index
     @quests = Quest.all
-    render :index do |page|
-      page.replace_html 'quest_holder', :template => 'admin/quests/index'
-    end
   end
 
 end

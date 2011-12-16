@@ -13,7 +13,9 @@
         <div style="display:table">
           <%= link_to 'Новый', new_quest_path, :remote => true %>
           <%= link_to 'Список', show_quests_path, :remote => true %>
-          <div id="quest_holder"></div>
+          <div id="quest_holder">
+            <%= render :template => 'admin/quests/list' %>
+          </div>
         </div>
       </div>
     </div>
