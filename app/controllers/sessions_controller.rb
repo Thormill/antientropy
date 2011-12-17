@@ -1,16 +1,16 @@
 class SessionsController < ApplicationController
-  skip_before_filter :require_login, :except => [:destroy]
+  before_filter :require_login, :only => [:destroy]
 
   def create
-    if user = login(params[:email], params[:password], params[:remember])
-      redirect_back_or_to(:root)
-    else
-      redirect_back_or_to(:root)
+    @notice = login(params[:email], params[:password], params[:remember]) ? I18n.t('user.login.done') : I18n.t('user.login.error')
+
+    respond_to do |format|
+      format.js
     end
   end
 
   def destroy
     logout
-    redirect_to(:login, :notice => 'Logged out!')
+    redirect_to(:root)
   end
 end

@@ -25,7 +25,9 @@
         <div style="display:table">
           <%= link_to 'Новый', '#', :remote => true %>
           <%= link_to 'Список', '#', :remote => true %>
-          <div id="user_holder"></div>
+          <div id="user_holder">
+            <%= render :template => 'admin/users/_list' %>
+          </div>
         </div>
       </div>
     </div>

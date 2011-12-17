@@ -1,4 +1,12 @@
 Antientropy::Application.routes.draw do
+  get "users/new"
+
+  get "users/list"
+
+  get "users/activate"
+
+  get "users/show"
+
   root :to => 'home#index'
 
   resources :users, :admins do
@@ -12,6 +20,7 @@ Antientropy::Application.routes.draw do
 
   namespace :admin do
     resources :quests
+    resources :users
   end
 
   resources :password_resets
@@ -21,11 +30,15 @@ Antientropy::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'register' => 'users#create', :as => :register
 
-  
+# administrator control
   match 'admin' => 'admin#index', :as => :admin
+
   match 'admin/new_quest' => 'admin/quests#new', as: :new_quest
   match 'admin/index' => 'admin/quests#index', as: :show_quests
-  
+
+  match 'admin/new_user' => 'admin/users#new', as: :admin_new_user
+  match 'admin/show_users' => 'admin/users#list', as: :admin_show_users
+
   resource :oauth do
     get :callback
   end

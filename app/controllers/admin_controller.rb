@@ -9,6 +9,7 @@ class AdminController < ApplicationController
 
   def index
     @quests = Quest.all
+    @users = User.all
   end
 
 end
