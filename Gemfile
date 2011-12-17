@@ -14,6 +14,7 @@ end
 group :production do
   gem 'rb-inotify'
   gem 'mysql2'
+  gem 'unicorn'
 end
 
 group :development, :test do

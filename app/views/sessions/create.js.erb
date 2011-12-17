@@ -1,27 +1,26 @@
 var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-<% if @notice == I18n.t('user.login.done') %>
-  window.location = "/"
+<% if logged_in? %>
+  $('#form-login #error-form').html('')
+  $('#form-login #error-email').html('')
+  $('#form-login #error-password').html('')
+  window.location = '/'
 <% else %>
-  $('#error-form').html('<span>Ошибка!</span> <%= @notice %>')
+  $('#form-login #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.login.error.common') %>')
+
+  if ($('#form-login  #email').val() == '')
+    $('#form-login #error-email').html('<span><%= I18n.t('error') %></span> Введите e-mail')
+  else
+    if(regexp_email.test($('#form-login #email').val()) == false)
+      $('#form-login #error-email').html('<span><%= I18n.t('error') %></span> Введите корректный e-mail')
+    else
+      $('#form-login #error-email').html('')
+
+  if ($('#form-login #password').val() == '')
+    $('#form-login #error-password').html('<span><%= I18n.t('error') %></span> Введите пароль')
+  else
+    if ($('#form-login #password').val().length < 4)
+      $('#form-login #error-password').html('<span><%= I18n.t('error') %></span> Пароль не может быть короче трех символов')
+    else
+      $('#form-login #error-password').html('')
 <% end %>
-
-if ($('#email').val() == '') {
-  $('#error-email').html('<span>Ошибка!</span> Введите e-mail')
-} else {
-  if(regexp_email.test($('#email').val()) == false) { 
-    $('#error-email').html('<span>Ошибка!</span> Введите корректный e-mail')
-  } else {
-    $('#error-email').html('')
-  }
-}
-
-if ($('#password').val() == '') {
-  $('#error-password').html('<span>Ошибка!</span> Введите пароль')
-} else {
-  if ($('#password').val().length < 4) {
-    $('#error-password').html('<span>Ошибка!</span> Пароль не может быть короче трех символов')
-  } else {
-    $('#error-password').html('')
-  }
-}
