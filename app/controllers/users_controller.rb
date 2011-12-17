@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @notice = @user.save ? I18n.t('user.registration.done') : I18n.t('user.registration.error')
-
+    @registered = @user.save ? true : false
+    
     respond_to do |format|
       format.js
     end
