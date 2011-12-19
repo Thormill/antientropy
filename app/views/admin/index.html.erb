@@ -2,7 +2,7 @@
   <ul>
     <li nav-item-id="1" class="active">Квесты</li>
     <li nav-item-id="2">Пользователи</li>
-    <li nav-item-id="3">Типы квестов</li>
+    <!--<li nav-item-id="3">Типы квестов</li>-->
   </ul>
 </div>
 
@@ -14,6 +14,7 @@
         <div style="display:table">
           <%= link_to 'Новый', new_quest_path, :remote => true %>
           <%= link_to 'Список', show_quests_path, :remote => true %>
+          <%= link_to 'Типы квестов', admin_questtypes_path, :remote => true %>
           <div id="quest_holder">
             <%= render :template => 'admin/quests/_index' %>
           </div>
@@ -32,7 +33,7 @@
         </div>
       </div>
     </div>
-
+<!--
     <div class="nav-page" nav-page-id="3">
       <div class="form-border blue" style="display:table">
         <div style="display:table">
@@ -44,6 +45,6 @@
         </div>
       </div>
     </div>
-
+-->
   </div>
 </div>
