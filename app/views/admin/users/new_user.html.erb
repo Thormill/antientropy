@@ -1,0 +1,9 @@
+<%= form_for [:admin, @user], :remote => true do |f| %>
+<%=   f.label          "E-mail" %><br>
+<%=   f.text_field     :email %><br>
+<%=   f.label          "Пароль" %><br>
+<%=   f.password_field :password %><br>
+<%=   f.label          "Подтверждение" %><br>
+<%=   f.password_field :password_confirmation %><br>
+<%=   f.submit "Создать квест" %>
+<%  end %>

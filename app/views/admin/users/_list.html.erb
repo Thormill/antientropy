@@ -9,10 +9,13 @@
   <tr>
     <td><%= user.id %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Показать', admin_user_path(user.id), :remote => true %>
-    <%= link_to 'Редактировать', nil, :remote => true %>
-    <%= link_to 'Удалить', nil, :remote => true, 
-            :confirm => 'Не передумали удалять?', :method => :delete %></td>
+    <td>
+      <%= link_to 'Активировать', admin_user_activation_path(user.id), :remote => true %>
+      <%= link_to 'Показать', admin_user_path(user.id), :remote => true %>
+      <%= link_to 'Редактировать', edit_admin_user_path(user.id), :remote => true %>
+      <%= link_to 'Удалить', delete_admin_user_path(user.id), :remote => true, 
+                  :confirm => 'Не передумали удалять?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
