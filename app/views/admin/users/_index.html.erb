@@ -2,6 +2,7 @@
 <tr>
   <th>#</th>
   <th>e-mail</th>
+  <th>статус</th>
   <th>&nbsp;</th>
 </tr>
 
@@ -9,6 +10,7 @@
   <tr>
     <td><%= user.id %></td>
     <td><%= user.email %></td>
+    <td><%= user.activation_state %></td>
     <td>
       <%= link_to 'Активировать', admin_user_activate_path(user.id), :remote => true %>
       <%= link_to 'Показать', admin_user_path(user.id), :remote => true %>

@@ -6,20 +6,20 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:quest])
+    @user = User.new(params[:user])
     if(@user.save)
-            redirect_to admin_users_path, :notice => 'Yeah!'
+            redirect_to admin_users_path
     else
-            redirect_to new_admin_user_path(@user), :notice => 'mistake'
+            redirect_to new_admin_user_path(@user)
     end
   end
 
-  def list
+  def index
     @users = User.all
   end
 
   def activate
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
     @user.activate!
   end
 
@@ -30,7 +30,7 @@ class Admin::UsersController < ApplicationController
   def delete
     @user = User.find(params[:id])
     @user.destroy
-    #redirect_to(admin_users_url)
+    redirect_to(admin_users_url)
   end
 
 end
