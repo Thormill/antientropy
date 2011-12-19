@@ -1,4 +1,6 @@
 class Admin::QuestTypesController < ApplicationController
+  respond_to :js
+
   def index
   end
 
@@ -6,9 +8,6 @@ class Admin::QuestTypesController < ApplicationController
   end
 
   def create
-  end
-
-  def show
   end
 
   def edit

@@ -1,4 +1,6 @@
 class Admin::GreetingsController < ApplicationController
+  respond_to :js
+
   def index
   end
 
