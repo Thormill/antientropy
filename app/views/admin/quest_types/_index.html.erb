@@ -1,2 +1,18 @@
-<h1>Admin::QuestTypes#index</h1>
-<p>Find me in app/views/admin/quest_types/index.html.erb</p>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>&nbsp;</th>
+  </tr>
+
+  <% @qtypes.each do |qtype| %>
+  <tr>
+    <td> <%= qtype.name %> </td>
+    <td>
+      <%= link_to 'Редактировать', nil, :remote => true %>
+      <%= link_to 'Удалить', nil, :remote => true,
+                  :confirm => 'Не передумали удалять?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+
+</table>
