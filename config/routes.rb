@@ -1,4 +1,22 @@
 Antientropy::Application.routes.draw do
+  get "greetings/index"
+
+  get "greetings/new"
+
+  get "greetings/edit"
+
+  get "greetings/delete"
+
+  get "quest_types/index"
+
+  get "quest_types/new"
+
+  get "quest_types/show"
+
+  get "quest_types/edit"
+
+  get "quest_types/delete"
+
   get "users/new"
 
   get "users/list"
