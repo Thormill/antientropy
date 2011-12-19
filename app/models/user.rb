@@ -7,9 +7,22 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
-  validates_length_of :password, :minimum => 3, :message => "password must be at least 3 characters long", :if => :password
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+  validates :email,
+    :presence => true,
+    :uniqueness => true,
+    :format => { with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i },
+    :on => :create
 
+  validates :name,
+    :presence => true,
+    :uniqueness => true,
+    :on => :create
+
+  validates_presence_of :password
+  validates_length_of :password, :minimum => 3, :if => :password
+
+  validates_confirmation_of :password, :if => :password
+  
   def accept_quest(q_id)
     self.quest_assigns.create(:quest_id => q_id, :quest_status_id => 0)
   end

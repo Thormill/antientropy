@@ -6,7 +6,7 @@ var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
   $('#form-login #error-password').html('')
   window.location = '/'
 <% else %>
-  $('#form-login #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.login.error.common') %>')
+  $('#form-login #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.login.error') %>')
 
   if ($('#form-login  #email').val() == '')
     $('#form-login #error-email').html('<span><%= I18n.t('error') %></span> Введите e-mail')

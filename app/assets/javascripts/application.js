@@ -4,10 +4,11 @@
 
 // animate content
 $(document).ready(function() {
-  var w = screen.width-150;
+  var w = screen.width-300;
   var c = $('.nav-page').size();
 
-  $('.nav-page').css("width", w)
+  $('#content').css('width', w * c)
+  $('.nav-page').css('width', w)
 
   $('.ctrl-prev').click(function() {
     var p = parseInt($('#nav-page-holder').css('margin-left'));

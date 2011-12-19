@@ -1,33 +1,23 @@
-<% if @registered %>
-  $('#form-registr #error-form').html('')
-  $('#form-registr #error-email').html('')
-  $('#form-registr #error-password').html('')
-  $('#form-registr #error-password_confirmation').html('')
+<% unless @user.errors.any? %>
+  $('#form-registr').html('<%= I18n.t('user.registr.done') %>')
 <% else %>
-  $('#form-registr #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.registr.error.common') %>')
+  $('#form-registr #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.registr.error') %>')
 
-  var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-  if ($('#form-registr #user_email').val() == '')
-    $('#form-registr #error-email').html('<span><%= I18n.t('error') %></span> Введите e-mail')
-  else
-    if(regexp_email.test($('#form-registr #user_email').val()) == false)
-      $('#form-registr #error-email').html('<span><%= I18n.t('error') %></span> Введите корректный e-mail')
-    else
-      $('#form-registr #error-email').html('')
+  <% if @user.errors[:email].first %>
+    $('#form-registr #error-email').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:email].first %>')
+  <% else %>
+    $('#form-registr #error-email').html('')
+  <% end %>
 
-  if ($('#form-registr #user_password').val() == '')
-    $('#form-registr #error-password').html('<span><%= I18n.t('error') %></span> Введите пароль')
-  else
-    if ($('#form-registr #user_password').val().length < 4)
-      $('#form-registr #error-password').html('<span><%= I18n.t('error') %></span> Пароль не может быть короче трех символов')
-    else
-      $('#form-registr #error-password').html('')
+  <% if @user.errors[:password].first %>
+    $('#form-registr #error-password').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:password].first %>')
+  <% else %>
+    $('#form-registr #error-password').html('')
+  <% end %>
 
-  if ($('#form-registr #user_password_confirmation').val() == '')
-    $('#form-registr #error-password_confirmation').html('<span><%= I18n.t('error') %></span> Введите подтверждение пароля')
-  else
-    if ($('#form-registr #user_password').val() != $('#form-registr #user_password_confirmation').val())
-      $('#form-registr #error-password_confirmation').html('<span><%= I18n.t('error') %></span> Пароль и подтверждение не совпадают')
-    else
-      $('#form-registr #error-password_confirmation').html('')
+  <% if @user.errors[:name].first %>
+    $('#form-registr #error-name').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:name].first %>')
+  <% else %>
+    $('#form-registr #error-name').html('')
+  <% end %>
 <% end %>

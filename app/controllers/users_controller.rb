@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    @registered = @user.save ? true : false
-    
+    @user.save
+
     respond_to do |format|
       format.js
     end
