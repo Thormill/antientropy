@@ -37,7 +37,7 @@ Antientropy::Application.routes.draw do
   match 'admin/:id/activate_user' => 'admin/users#activate', as: :admin_user_activate
   match 'admin/:id/delete_user' => 'admin/users#delete', as: :admin_user_delete
 
-#  match 'admin/questtypes' => 'admin/quest_types#index', as: :admin_questtypes
+  match 'admin/:id/delete_quest_type' => 'admin/quest_types#delete', as: :delete_admin_quest_type
 
   resource :oauth do
     get :callback

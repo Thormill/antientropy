@@ -12,7 +12,7 @@
   <tr>
     <td><%= quest.id %></td>
     <td><%= quest.title %></td>
-    <td><%= QuestTypes.find(quest.qtype).name %></td>
+    <td><%= QuestType.find(quest.qtype).name %></td>
     <td><%= quest.location_id %></td>
     <td><%= quest.time_to_make %></td>
     <td><%= link_to 'Показать', admin_quest_path(quest), :remote => true %>
