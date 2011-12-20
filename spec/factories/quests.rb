@@ -2,9 +2,8 @@
 
 FactoryGirl.define do
   factory :quest do
-    user_id 1
-    quest_title "MyString"
-    quest_text "MyString"
+    title "quest_title"
+    text "quest_text"
     location_id 1
   end
 end

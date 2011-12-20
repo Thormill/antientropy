@@ -13,8 +13,9 @@
         <div style="display:table">
           <%= link_to 'Новый', new_quest_path, :remote => true %>
           <%= link_to 'Список', show_quests_path, :remote => true %>
+          <%= link_to 'Типы квестов', admin_quest_types_path, :remote => true %>
           <div id="quest_holder">
-            <%= render :template => 'admin/quests/list' %>
+            <%= render :template => 'admin/quests/_index' %>
           </div>
         </div>
       </div>
@@ -31,6 +32,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

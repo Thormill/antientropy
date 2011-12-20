@@ -1,0 +1,2 @@
+module Admin::QuestTypesHelper
+end

@@ -1,0 +1,5 @@
+<%= form_for [:admin, @qtype], :remote => true do |f| %>
+<%=   f.label          "название" %><br>
+<%=   f.text_field     :name %><br>
+<%=   f.submit "Ок" %>
+<%  end %>

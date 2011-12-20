@@ -1,0 +1,21 @@
+<p> <%= link_to 'Новый тип квеста', new_admin_quest_type_path, :remote => true %> </p>
+
+<table>
+
+  <tr>
+    <th>Название</th>
+    <th>&nbsp;</th>
+  </tr>
+
+  <% @qtypes.each do |qtype| %>
+  <tr>
+    <td> <%= qtype.name %> </td>
+    <td>
+      <%= link_to 'Редактировать', edit_admin_quest_type_path(qtype), :remote => true %>
+      <%= link_to 'Удалить', delete_admin_quest_type_path(qtype), :remote => true,
+                  :confirm => 'Не передумали удалять?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+
+</table>
