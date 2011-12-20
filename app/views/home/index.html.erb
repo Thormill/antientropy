@@ -1,36 +1,50 @@
-<div id="navigation">
-  <ul>
-    <li nav-item-id="1" class="active">Вход</li>
-    <li nav-item-id="2">Регистрация</li>
-    <li nav-item-id="3">Об игре</li>
-  </ul>
+  <div id="menu">
+    <ul>
+      <li><a menu-item-id="1" href="#" onclick="menu_click(115, 1); return false;">Вход</a></li>
+      <li><a menu-item-id="2" href="#" onclick="menu_click(-21, 4); return false;">Регистрация</a></li>
+      <li><a menu-item-id="3" href="#" onclick="menu_click(0); return false;">Восстановление</a></li>
+      <li><a menu-item-id="4" href="#" onclick="menu_click(20); return false;">Карта</a></li>
+      <li><a menu-item-id="5" href="#" onclick="menu_click(20); return false;">Статистика</a></li>
+      <li><a menu-item-id="6" href="#" onclick="menu_click(20); return false;">Об игре</a></li>
+    </ul>
+  </div>
 </div>
 
 <div id="content">
-  <div id="nav-page-holder">
+  <div class="column col-first">
 
-    <div class="nav-page" nav-page-id="1">
-      <div style="width:800px">
-        <div class="form-border green" style="width:360px">
-          <%= render 'login_form' %>
-        </div>
-        <div class="form-border yellow" style="width:360px">
-          <%= render 'forgot_password_form' %>
-        </div>
-      </div>
-    </div>
-    
-    <div class="nav-page" nav-page-id="2">
-      <div class="form-border yellow" style="width:360px">
-        <%= render 'register_form' %>
+    <div color-item-id="1" class="widget-border">
+      <div class="widget-content">
+        <%= render 'login_form' %>
       </div>
     </div>
 
-    <div class="nav-page" nav-page-id="3">
-      <div class="form-border blue" style="display:table">
+  </div>
+
+  <div class="column">
+
+    <div color-item-id="2" class="widget-border">
+      <div class="widget-content">
         Об игре
       </div>
     </div>
 
   </div>
+
+  <div class="column col-third">
+
+    <div color-item-id="3" class="widget-border">
+      <div class="widget-content">
+        <%= render 'forgot_password_form' %>
+      </div>
+    </div>
+
+    <div color-item-id="4" class="widget-border">
+      <div class="widget-content">
+        <%= render 'register_form' %>
+      </div>
+    </div>
+
+  </div>
+  
 </div>

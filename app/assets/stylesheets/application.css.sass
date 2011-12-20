@@ -25,20 +25,10 @@ table
   border-spacing: 0
 
 body
-  background: #000
+  background: #161616
 
 label
   cursor: pointer
-
-a
-  color: #b7b7b7
-
-a:hover
-  color: #b7b7b7
-  text-decoration: none
-
-form a
-  color: #474747
 
 .blue
   background: #36b3db
@@ -59,97 +49,75 @@ form a
   background: #df2e9a
 
 #wrapper
-  overflow: hidden
+  margin: 0 auto
+  width: 1000px
 
-.gradient
+#header
   position: fixed
-  top: 0px
-  bottom: 0
+  top: 0
+  width: 1000px
+  height: 100px
   z-index: 2
+  background: #161616
+  border-bottom: 1px solid #535353
   
-.grad-left
-  background: image-url('grad_left.png') 0 0 repeat-y
-  width: 150px
-  left: 0
+#logo
+  float: left
+  width: 350px
+  height: 100px
+  background: image-url('logo.png') 0 0 no-repeat
 
-.grad-right
-  background: image-url('grad_right.png') 0 0 repeat-y
-  width: 150px
-  right: 0
-  
 #top-line
-  position: relative
-  height: 85px
-  background: black
-  font-size: 12px
-  background: image-url('logo.png') 50px 0  no-repeat
+  float: right
+  width: 650px
+  height: 50px
 
-#top-line .greating
-  position: absolute
-  top: 30px
-  right: 150px
-  color: white
-  font-size: 20px
+#menu
+  float: right
+  width: 650px
+  height: 50px
 
-.control
-  position: fixed
-  top: 48%
-  width: 22px
-  height: 40px
-  background: image-url('left_right_ctrls.png')
-  cursor: pointer
-  z-index: 3
-
-.ctrl-prev
-  left: 60px
-  background-position: 0 -40px
-
-.ctrl-next
-  right: 60px
-  background-position: 0 0
-
-#navigation
-  width: 100%
-  height: 35px
-  line-height: 35px
-  overflow: hidden
-  margin: 25px 0 25px 150px
-
-#navigation ul
-  margin: 0
+#menu ul
+  margin-top: 15px
+  float: right
   padding: 0
 
-#navigation li
-  cursor: pointer
-  font-size: 25px
+#menu li
   display: block
-  color: #333
   float: left
-  margin: 0 10px
 
-#navigation li.active
-  color: white
+#menu li a
+  font-size: 11px
+  font-weight: bold
+  color: #fff
+  text-decoration: none
+  padding: 20px 16px 20px 16px
+
+#menu li a:hover  
+  background: #74cd1d
+
+#menu li a.active
+  color: #333
 
 #content
-  padding: 0 0 150px 150px
+  margin-top: 115px
+  width: 1000px
+
+.column
   float: left
+  width: 323px
 
-.nav-page
-  width: 1130px
-  float: left
-  overflow: hidden
-
-.nav-page div
-  margin: 0 auto
-
-.form-border
-  padding: 15px
-  border-radius: 10px
+.col-first
+  margin-right: 15px
   
-.footer
-  background: image-url('grad_foot.png')
-  height: 50px
-  position: fixed
-  left: 0
-  bottom: 0
-  right: 0
+.col-third
+  margin-left: 15px
+  
+.widget-border
+  padding: 10px
+  background: #535353
+  margin-bottom: 15px
+
+.widget-content
+  padding: 10px
+  background: #fff
