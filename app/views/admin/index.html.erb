@@ -26,6 +26,7 @@
         <div style="display:table">
           <%= link_to 'Новый', new_admin_user_path, :remote => true %>
           <%= link_to 'Список', admin_users_path, :remote => true %>
+          <%= link_to 'Приветствия', admin_greetings_path, :remote => true %>
           <div id="user_holder">
             <%= render :template => 'admin/users/_index' %>
           </div>

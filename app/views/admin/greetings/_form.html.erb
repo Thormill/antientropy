@@ -1,0 +1,5 @@
+<%= form_for [:admin, @greeting], :remote => true do |f| %>
+<%=   f.label          "Текст приветствия" %><br>
+<%=   f.text_field     :text %><br>
+<%=   f.submit "Ок" %>
+<%  end %>
