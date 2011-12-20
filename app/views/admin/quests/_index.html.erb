@@ -16,9 +16,10 @@
     <td><%= quest.location_id %></td>
     <td><%= quest.time_to_make %></td>
     <td><%= link_to 'Показать', admin_quest_path(quest), :remote => true %>
-    <%= link_to 'Редактировать', edit_admin_quest_path(quest), :remote => true %>
-    <%= link_to 'Удалить', admin_quest_path(quest), :remote => true, 
-            :confirm => 'Не передумали удалять?', :method => :delete %></td>
+      <%= link_to 'Редактировать', edit_admin_quest_path(quest), :remote => true %>
+      <%= link_to 'Удалить', admin_quest_path(quest), :remote => true, 
+                  :confirm => 'Не передумали удалять?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
