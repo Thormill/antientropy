@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       #redirect_to :root # редирект в кабинет
     #else
       @user = User.new
-      @greeting = Greetings.find(rand(Greetings.count)+1).text
+      @greeting = Greeting.find(rand(Greeting.count)+1).text
     #end
   end
 
