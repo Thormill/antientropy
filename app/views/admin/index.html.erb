@@ -1,7 +1,7 @@
 <div id="menu">
   <ul>
-    <li><a menu-item-id="1" href="#" onclick="menu_click(115,1); return false;">Квесты</a></li>
-    <li><a menu-item-id="1" href="#" onclick="menu_click(45,2); return false;">Пользователи</a></li>
+    <li><a menu-item-id="1" href="#" onclick="menu_click(45,1); return false;">Квесты</a></li>
+    <li><a menu-item-id="2" href="#" onclick="menu_click(45,2); return false;">Пользователи</a></li>
   </ul>
 </div>
 
@@ -11,7 +11,7 @@
 
     <div color-item-id="1" class="widget-border" onclick="menu_item_click(1)">
       <div class="widget-content">
-        <div style="display:table">
+        <div>
           <%= link_to 'Новый', new_quest_path, :remote => true %>
           <%= link_to 'Список', show_quests_path, :remote => true %>
           <%= link_to 'Типы квестов', admin_quest_types_path, :remote => true %>
@@ -25,10 +25,13 @@
   </div>
 
   <div class="column">
+  </div>
+
+  <div class="column col-third">
 
     <div color-item-id="2" class="widget-border" onclick="menu_item_click(2)">
       <div class="widget-content">
-        <div style="display:table">
+        <div>
           <%= link_to 'Новый', new_admin_user_path, :remote => true %>
           <%= link_to 'Список', admin_users_path, :remote => true %>
           <%= link_to 'Приветствия', admin_greetings_path, :remote => true %>
@@ -38,10 +41,7 @@
         </div>
       </div>
     </div>
-
-  </div>
-
-  <div class="column col-third">
+    
   </div>
 
 </div>
