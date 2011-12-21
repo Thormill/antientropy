@@ -14,9 +14,7 @@
 ActiveRecord::Schema.define(:version => 20111216093540) do
 
   create_table "greetings", :force => true do |t|
-    t.string   "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "text"
   end
 
   create_table "maps", :force => true do |t|
