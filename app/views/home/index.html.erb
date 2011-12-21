@@ -1,11 +1,11 @@
   <div id="menu">
     <ul>
-      <li><a menu-item-id="1" href="#" onclick="menu_click(115, 1); return false;">Вход</a></li>
-      <li><a menu-item-id="2" href="#" onclick="menu_click(-21, 4); return false;">Регистрация</a></li>
-      <li><a menu-item-id="3" href="#" onclick="menu_click(115, 3); return false;">Восстановление</a></li>
-      <li><a menu-item-id="4" href="#" onclick="menu_click(20); return false;">Карта</a></li>
-      <li><a menu-item-id="5" href="#" onclick="menu_click(20); return false;">Статистика</a></li>
-      <li><a menu-item-id="6" href="#" onclick="menu_click(115, 2); return false;">Об игре</a></li>
+      <li><a menu-item-id="1" href="#" onclick="menu_click(115,1); return false;">Вход</a></li>
+      <li><a menu-item-id="2" href="#" onclick="menu_click(45,2); return false;">Регистрация</a></li>
+      <li><a menu-item-id="3" href="#" onclick="menu_click(-182,3); return false;">Восстановление</a></li>
+      <li><a menu-item-id="4" href="#" onclick="menu_click(45,4); return false;">Новости</a></li>
+      <li><a menu-item-id="5" href="#" onclick="menu_click(115,5); return false;">Статистика</a></li>
+      <li><a menu-item-id="6" href="#" onclick="menu_click(115,6); return false;">Об игре</a></li>
     </ul>
   </div>
 </div>
@@ -13,9 +13,15 @@
 <div id="content">
   <div class="column col-first">
 
-    <div color-item-id="1" class="widget-border">
+    <div color-item-id="1" class="widget-border" onclick="menu_item_click(1)">
       <div class="widget-content">
         <%= render 'login_form' %>
+      </div>
+    </div>
+    
+    <div color-item-id="3" class="widget-border" onclick="menu_item_click(3)">
+      <div class="widget-content">
+        <%= render 'forgot_password_form' %>
       </div>
     </div>
 
@@ -23,9 +29,15 @@
 
   <div class="column">
 
-    <div color-item-id="2" class="widget-border">
+    <div color-item-id="6" class="widget-border" onclick="menu_item_click(6)">
       <div class="widget-content">
-        Об игре
+        об игре
+      </div>
+    </div>
+
+    <div color-item-id="4" class="widget-border" onclick="menu_item_click(4)">
+      <div class="widget-content">
+        новости
       </div>
     </div>
 
@@ -33,13 +45,13 @@
 
   <div class="column col-third">
 
-    <div color-item-id="3" class="widget-border">
+    <div color-item-id="5" class="widget-border" onclick="menu_item_click(5)">
       <div class="widget-content">
-        <%= render 'forgot_password_form' %>
+        статистика
       </div>
     </div>
-
-    <div color-item-id="4" class="widget-border">
+    
+    <div color-item-id="2" class="widget-border" onclick="menu_item_click(2)">
       <div class="widget-content">
         <%= render 'register_form' %>
       </div>

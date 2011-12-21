@@ -1,16 +1,17 @@
-<div id="navigation">
+<div id="menu">
   <ul>
-    <li nav-item-id="1" class="active">Квесты</li>
-    <li nav-item-id="2">Пользователи</li>
+    <li><a menu-item-id="1" href="#" onclick="menu_click(45,1); return false;">Квесты</a></li>
+    <li><a menu-item-id="2" href="#" onclick="menu_click(45,2); return false;">Пользователи</a></li>
   </ul>
 </div>
 
 <div id="content">
-  <div id="nav-page-holder">
 
-    <div class="nav-page" nav-page-id="1">
-      <div class="form-border green" style="display:table">
-        <div style="display:table">
+  <div class="column col-first">
+
+    <div color-item-id="1" class="widget-border" onclick="menu_item_click(1)">
+      <div class="widget-content">
+        <div>
           <%= link_to 'Новый', new_quest_path, :remote => true %>
           <%= link_to 'Список', show_quests_path, :remote => true %>
           <%= link_to 'Типы квестов', admin_quest_types_path, :remote => true %>
@@ -21,9 +22,16 @@
       </div>
     </div>
 
-    <div class="nav-page" nav-page-id="2">
-      <div class="form-border purple" style="display:table">
-        <div style="display:table">
+  </div>
+
+  <div class="column">
+  </div>
+
+  <div class="column col-third">
+
+    <div color-item-id="2" class="widget-border" onclick="menu_item_click(2)">
+      <div class="widget-content">
+        <div>
           <%= link_to 'Новый', new_admin_user_path, :remote => true %>
           <%= link_to 'Список', admin_users_path, :remote => true %>
           <%= link_to 'Приветствия', admin_greetings_path, :remote => true %>
@@ -33,5 +41,7 @@
         </div>
       </div>
     </div>
+    
   </div>
+
 </div>
