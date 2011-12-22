@@ -1,15 +1,53 @@
-<div class="topbar-wrapper">
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="container-fluid">
-        <a class="brand" href="#">CheckPoint</a>
-        <ul class="nav">
-          <li class="active"><a href="#">Об игре</a></li>
-          <li><a href="#">Карта</a></li>
-          <li><a href="#">Команда</a></li>
-        </ul>
+<div class="topbar" data-scrollspy="scrollspy">
+  <div class="fill">
+    <div class="container-fluid">
+      <a class="brand" href="#">CheckPoint</a>
+      <ul class="nav">
+        <li><a href="#page1">Об игре</a></li>
+        <li><a href="#page2">Карта</a></li>
+        <li><a href="#">Команда</a></li>
+      </ul>
+
+      <% if logged_in?%>
+        <p class="pull-right">Вы зашли как <a href="#"><%= current_user.name %></a> [<%= link_to 'Выход', :logout %>]</p>
+      <% else %>
         <%= render 'fast_login_form' %>
-      </div>
+      <% end %>
+        
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="content">
+
+    <section id="page1">
+      <div class="page-header"><h1>1 <small>2</small></h1></div>
+      <div class="row">
+        <div class="span10">
+          <h2>1</h2>
+        </div>
+        <div class="span4">
+          <h3>2</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="page2">
+      <div class="page-header" id="page2"><h1>1 <small>2</small></h1></div>
+      <div class="row">
+        <div class="span10">
+          <h2>1</h2>
+        </div>
+        <div class="span4">
+          <h3>2</h3>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+</div>
+
+<footer>
+  <p>1</p>
+</footer>
