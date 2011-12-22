@@ -1,47 +1,13 @@
-<div id="menu">
-  <ul>
-    <li><a menu-item-id="1" href="#" onclick="menu_click(45,1); return false;">Квесты</a></li>
-    <li><a menu-item-id="2" href="#" onclick="menu_click(45,2); return false;">Пользователи</a></li>
-  </ul>
-</div>
+<div class="container-fluid">
 
-<div id="content">
-
-  <div class="column col-first">
-
-    <div color-item-id="1" class="widget-border" onclick="menu_item_click(1)">
-      <div class="widget-content">
-        <div>
-          <%= link_to 'Новый', new_quest_path, :remote => true %>
-          <%= link_to 'Список', show_quests_path, :remote => true %>
-          <%= link_to 'Типы квестов', admin_quest_types_path, :remote => true %>
-          <div id="quest_holder">
-            <%= render :template => 'admin/quests/_index' %>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  <div class="sidebar">
+    <ul>
+      <li><%= link_to 'Задания', quests_admin_path, :remote => true %></li>
+      <li><%= link_to 'Пользователи', users_admin_path, :remote => true %></li>
+    </ul>
   </div>
 
-  <div class="column">
-  </div>
-
-  <div class="column col-third">
-
-    <div color-item-id="2" class="widget-border" onclick="menu_item_click(2)">
-      <div class="widget-content">
-        <div>
-          <%= link_to 'Новый', new_admin_user_path, :remote => true %>
-          <%= link_to 'Список', admin_users_path, :remote => true %>
-          <%= link_to 'Приветствия', admin_greetings_path, :remote => true %>
-          <div id="user_holder">
-            <%= render :template => 'admin/users/_index' %>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+  <div class="content">
   </div>
 
 </div>

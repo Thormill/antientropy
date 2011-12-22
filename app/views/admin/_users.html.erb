@@ -1,0 +1,6 @@
+<%= link_to 'Новый', new_admin_user_path, :remote => true %>
+<%= link_to 'Список', users_admin_path, :remote => true %>
+<%= link_to 'Приветствия', admin_greetings_path, :remote => true %>
+<div id="user_holder">
+  <%= render :template => 'admin/users/_index' %>
+</div>
