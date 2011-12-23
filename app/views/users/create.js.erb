@@ -3,7 +3,10 @@
   sHtml += '  <strong><%= I18n.t('user.reg.done') %></strong><br/>';
   sHtml += '  <%= I18n.t('user.reg.done_message') %>';
   sHtml += '</div>';
-
+  sHtml += '<div class="actions">';
+  sHtml += '  <%= escape_javascript(content_tag :div, "OK", class: 'btn success', onclick: "$('#modal-reg').modal('hide')") %>';
+  sHtml += '</div>';
+  
   $('#form-reg').html(sHtml);
 <% else %>
   $('#form-reg #form-error').addClass('alert-message error');
