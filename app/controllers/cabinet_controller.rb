@@ -5,7 +5,7 @@ class CabinetController < ApplicationController
       raise ActionController::RoutingError.new('Not Found')
     else
       unless @user == current_user
-        redirect_to root_path
+        render "alien"
       else
         render "index"
       end
