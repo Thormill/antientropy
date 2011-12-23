@@ -45,4 +45,8 @@ Antientropy::Application.routes.draw do
     get :callback
   end
   match "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  
+# personal page
+  match ':name' => 'cabinet#index', :as => :cabinet
+
 end
