@@ -3,7 +3,3 @@
 //= require bootstrap
 //= require_tree .
 
-
-$(document).ready(function() {
-  $('#topbar').scrollSpy()
-})

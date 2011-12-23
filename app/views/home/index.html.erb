@@ -1,16 +1,27 @@
-<div class="topbar" data-scrollspy="scrollspy">
+<div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
   <div class="fill">
     <div class="container-fluid">
       <a class="brand" href="#">CheckPoint</a>
       <ul class="nav">
-        <li><a href="#page1">Об игре</a></li>
-        <li><a href="#page2">Карта</a></li>
+        <li><a href="#about_game">Об игре</a></li>
+        <li><a href="#about_map">Карта</a></li>
         <li><a href="#">Команда</a></li>
       </ul>
 
       <% if logged_in?%>
-        <p class="pull-right">Вы зашли как <a href="#"><%= current_user.name %></a> [<%= link_to 'Выход', :logout %>]</p>
+        <ul class="nav secondary-nav">
+          <li class="menu"><a href="#" class="menu"><%= current_user.name %></a>
+            <ul class="menu-dropdown">
+              <li><a href="#">1</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Выход", :logout %></li>
+            </ul>
+          </li>
+        </ul>
       <% else %>
+        <ul class="nav secondary-nav">
+          <li><a href="#" data-controls-modal="modal-reg" data-backdrop="true" data-keyboard="true">Регистрация</a></li>
+        </ul>
         <%= render 'fast_login_form' %>
       <% end %>
         
@@ -21,26 +32,14 @@
 <div class="container">
   <div class="content">
 
-    <section id="page1">
-      <div class="page-header"><h1>1 <small>2</small></h1></div>
+    <section id="about_game">
+      <div class="page-header"><h1>Добро пожаловать!</h1></div>
       <div class="row">
         <div class="span10">
-          <h2>1</h2>
+          <h2>Об игре</h2>
         </div>
         <div class="span4">
-          <h3>2</h3>
-        </div>
-      </div>
-    </section>
-
-    <section id="page2">
-      <div class="page-header" id="page2"><h1>1 <small>2</small></h1></div>
-      <div class="row">
-        <div class="span10">
-          <h2>1</h2>
-        </div>
-        <div class="span4">
-          <h3>2</h3>
+          <h3>Последнее</h3>
         </div>
       </div>
     </section>
@@ -51,3 +50,22 @@
 <footer>
   <p>1</p>
 </footer>
+
+​<div id="modal-reg" class="modal hide fade" style="display: none; width: 610px; ">
+  <div class="modal-header">
+    <a href="#" class="close">×</a>
+    <h3>Регистрация</h3>
+  </div>
+  <div class="modal-body">
+    <%= render 'registration_form' %>
+  </div>
+</div>
+
+<section id="registration" style="display: none; ">
+  <div class="page-header" id="page2"><h1>Регистрация <small></small></h1></div>
+  <div class="row" style="margin-left: 80px; ">
+    <div class="span10">
+      
+    </div>
+  </div>
+</section>

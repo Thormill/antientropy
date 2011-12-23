@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   def create
     @notice = login(params[:email], params[:password], params[:remember]) ? I18n.t('user.login.done') : I18n.t('user.login.error')
 
-    if logged_in?
+    unless logged_in?
       redirect_to :root
-#    else
-#      redirect_to :root
+    else
+      redirect_to :root
     end
   end
 
