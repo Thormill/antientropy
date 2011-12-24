@@ -1,23 +1,38 @@
 <% unless @user.errors.any? %>
-  $('#form-registr').html('<%= I18n.t('user.registr.done') %>')
+  sHtml  = '<div class="alert-message success">';
+  sHtml += '  <strong><%= I18n.t('user.reg.done') %></strong><br/>';
+  sHtml += '  <%= I18n.t('user.reg.done_message') %>';
+  sHtml += '</div>';
+  sHtml += '<div class="actions">';
+  sHtml += '  <%= escape_javascript(content_tag :div, "OK", class: 'btn success', onclick: "$('#modal-reg').modal('hide')") %>';
+  sHtml += '</div>';
+  
+  $('#form-reg').html(sHtml);
 <% else %>
-  $('#form-registr #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.registr.error') %>')
+  $('#form-reg #form-error').addClass('alert-message error');
+  $('#form-reg .alert-message').html('<strong><%= I18n.t('error') %></strong> <%= I18n.t('user.reg.error') %>');
 
   <% if @user.errors[:email].first %>
-    $('#form-registr #error-email').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:email].first %>')
+    $('#form-reg #input-email').addClass('error')
+    $('#form-reg #input-email .help-inline').html('<%= @user.errors[:email].first %>');
   <% else %>
-    $('#form-registr #error-email').html('')
+    $('#form-reg #input-email').removeClass('error');
+    $('#form-reg #input-email .help-inline').html('');
   <% end %>
 
   <% if @user.errors[:password].first %>
-    $('#form-registr #error-password').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:password].first %>')
+    $('#form-reg #input-password').addClass('error')
+    $('#form-reg #input-password .help-inline').html('<%= @user.errors[:password].first %>');
   <% else %>
-    $('#form-registr #error-password').html('')
+    $('#form-reg #input-password').removeClass('error');
+    $('#form-reg #input-password .help-inline').html('');
   <% end %>
 
   <% if @user.errors[:name].first %>
-    $('#form-registr #error-name').html('<span><%= I18n.t('error') %></span> <%= @user.errors[:name].first %>')
+    $('#form-reg #input-name').addClass('error')
+    $('#form-reg #input-name .help-inline').html('<%= @user.errors[:name].first %>');
   <% else %>
-    $('#form-registr #error-name').html('')
+    $('#form-reg #input-name').removeClass('error');
+    $('#form-reg #input-name .help-inline').html('');
   <% end %>
 <% end %>

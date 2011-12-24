@@ -2,13 +2,14 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
+gem 'bootstrap-sass'
 gem 'sorcery'
 gem 'therubyracer'
 gem 'jquery-rails'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'uglifier'
 end
 
 group :production do

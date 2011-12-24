@@ -1,0 +1,14 @@
+/*= require_self
+ *= require_tree . */
+
+@import "bootstrap";
+
+html, body { background-color: #eee }
+
+.footer { padding: 30px 0; }
+
+footer p { text-align: center; }
+
+.alert-message { margin-right: 20px; }
+.modal-body { padding: 20px 0 0 0; }
+.actions { margin-bottom: 0; }

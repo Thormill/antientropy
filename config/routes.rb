@@ -27,11 +27,11 @@ Antientropy::Application.routes.draw do
 
 # administrator control
   match 'admin' => 'admin#index', :as => :admin
+  match 'admin/userlist' => 'admin#users', :as => :users_admin
+  match 'admin/questlist' => 'admin#quests', :as => :quests_admin
 
   match 'admin/new_quest' => 'admin/quests#new', as: :new_quest
-  match 'admin/index' => 'admin/quests#index', as: :show_quests
 
-  match 'admin/users' => 'admin/users#index', as: :admin_users
   match 'admin/new_user' => 'admin/users#new', as: :admin_new_user
   match 'admin/show_users' => 'admin/users#list', as: :admin_show_users
   match 'admin/:id/activate_user' => 'admin/users#activate', as: :admin_user_activate
@@ -45,4 +45,8 @@ Antientropy::Application.routes.draw do
     get :callback
   end
   match "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+  
+# personal page
+  match ':name' => 'cabinet#index', :as => :cabinet
+
 end

@@ -1,62 +1,62 @@
-  <div id="menu">
-    <ul>
-      <li><a menu-item-id="1" href="#" onclick="menu_click(115,1); return false;">Вход</a></li>
-      <li><a menu-item-id="2" href="#" onclick="menu_click(45,2); return false;">Регистрация</a></li>
-      <li><a menu-item-id="3" href="#" onclick="menu_click(-182,3); return false;">Восстановление</a></li>
-      <li><a menu-item-id="4" href="#" onclick="menu_click(45,4); return false;">Новости</a></li>
-      <li><a menu-item-id="5" href="#" onclick="menu_click(115,5); return false;">Статистика</a></li>
-      <li><a menu-item-id="6" href="#" onclick="menu_click(115,6); return false;">Об игре</a></li>
-    </ul>
+<div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
+  <div class="fill">
+    <div class="container-fluid">
+      <a class="brand" href="#">CheckPoint</a>
+      <ul class="nav">
+        <li><a href="#about_game">Об игре</a></li>
+        <li><a href="#about_map">Карта</a></li>
+        <li><a href="#">Команда</a></li>
+      </ul>
+
+      <% if logged_in?%>
+        <ul class="nav secondary-nav">
+          <li class="menu"><a href="#" class="menu"><%= current_user.name %></a>
+            <ul class="menu-dropdown">
+              <li><a href="#">1</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Выход", :logout %></li>
+            </ul>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="nav secondary-nav">
+          <li><a href="#" data-controls-modal="modal-reg" data-backdrop="true" data-keyboard="true">Регистрация</a></li>
+        </ul>
+        <%= render 'fast_login_form' %>
+      <% end %>
+        
+    </div>
   </div>
 </div>
 
-<div id="content">
-  <div class="column col-first">
+<div class="container">
+  <div class="content">
 
-    <div color-item-id="1" class="widget-border" onclick="menu_item_click(1)">
-      <div class="widget-content">
-        <%= render 'login_form' %>
+    <section id="about_game">
+      <div class="page-header"><h1>Добро пожаловать!</h1></div>
+      <div class="row">
+        <div class="span10">
+          <h2>Об игре</h2>
+        </div>
+        <div class="span4">
+          <h3>Последнее</h3>
+        </div>
       </div>
-    </div>
+    </section>
     
-    <div color-item-id="3" class="widget-border" onclick="menu_item_click(3)">
-      <div class="widget-content">
-        <%= render 'forgot_password_form' %>
-      </div>
-    </div>
-
   </div>
+</div>
 
-  <div class="column">
+<footer>
+  <p>1</p>
+</footer>
 
-    <div color-item-id="6" class="widget-border" onclick="menu_item_click(6)">
-      <div class="widget-content">
-        об игре
-      </div>
-    </div>
-
-    <div color-item-id="4" class="widget-border" onclick="menu_item_click(4)">
-      <div class="widget-content">
-        новости
-      </div>
-    </div>
-
+​<div id="modal-reg" class="modal hide fade" style="display: none; width: 610px; ">
+  <div class="modal-header">
+    <a href="#" class="close">×</a>
+    <h3>Регистрация</h3>
   </div>
-
-  <div class="column col-third">
-
-    <div color-item-id="5" class="widget-border" onclick="menu_item_click(5)">
-      <div class="widget-content">
-        статистика
-      </div>
-    </div>
-    
-    <div color-item-id="2" class="widget-border" onclick="menu_item_click(2)">
-      <div class="widget-content">
-        <%= render 'register_form' %>
-      </div>
-    </div>
-
+  <div class="modal-body">
+    <%= render 'registration_form' %>
   </div>
-  
 </div>

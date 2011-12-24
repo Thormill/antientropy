@@ -1,0 +1,37 @@
+<%= form_for(@user, url: :register, remote: true, html: { id: 'form-reg', class: 'form-stacked' }) do |f|%>
+  <div id="form-error"></div>
+  <fieldset>
+    <div id="input-email" class="clearfix">
+      <%= f.label :email, 'E-mail:' %>
+      <div class="input">
+        <%= f.text_field :email, class: 'xlarge' %>
+        <span class="help-inline"></span>
+      </div>
+    </div>
+    <div id="input-password" class="clearfix">
+      <%= f.label :password, 'Пароль:' %>
+      <div class="input">
+        <%= f.password_field :password, class: 'xlarge' %>
+        <span class="help-inline"></span>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :password_confirmation, 'Подтверждение пароля:' %>
+      <div class="input">
+        <%= f.password_field :password_confirmation, class: 'xlarge' %>
+        <span class="help-inline"></span>
+      </div>
+    </div>
+    <div id="input-name" class="clearfix">
+      <%= f.label :name, 'Имя в игре' %>
+      <div class="input">
+        <%= f.text_field :name, class: 'xlarge' %>
+        <span class="help-inline"></span>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit 'Регистрация', class: 'btn primary' %>
+  </div>
+<% end %>
