@@ -1,26 +1,39 @@
 var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 <% if logged_in? %>
-  $('#form-login #error-form').html('')
-  $('#form-login #error-email').html('')
-  $('#form-login #error-password').html('')
-  window.location = '/'
+  $('#modal-login').modal('hide');
+  window.location = '/<%= current_user.name %>'
 <% else %>
-  $('#form-login #error-form').html('<span><%= I18n.t('error') %></span> <%= I18n.t('user.login.error') %>')
+  if ($('#modal-login').css('display') == 'none') { 
+    $('#modal-login #form-login  #email').val($('#form-fast-login  #email').val());
+    $('#modal-login #form-login  #password').val($('#form-fast-login  #password').val());
+  }
 
-  if ($('#form-login  #email').val() == '')
-    $('#form-login #error-email').html('<span><%= I18n.t('error') %></span> Введите e-mail')
-  else
-    if(regexp_email.test($('#form-login #email').val()) == false)
-      $('#form-login #error-email').html('<span><%= I18n.t('error') %></span> Введите корректный e-mail')
-    else
-      $('#form-login #error-email').html('')
+  $('#modal-login').modal('show');
+  $('#modal-login #form-login #form-error').addClass('alert-message error');
+  $('#modal-login #form-login #form-error').html('<strong><%= I18n.t('error') %></strong> <%= I18n.t('user.login.error') %>');
 
-  if ($('#form-login #password').val() == '')
-    $('#form-login #error-password').html('<span><%= I18n.t('error') %></span> Введите пароль')
-  else
-    if ($('#form-login #password').val().length < 4)
-      $('#form-login #error-password').html('<span><%= I18n.t('error') %></span> Пароль не может быть короче трех символов')
-    else
-      $('#form-login #error-password').html('')
+  if ($('#modal-login #form-login  #email').val() == '') {
+    $('#modal-login #form-login #input-email').addClass('error')
+    $('#modal-login #form-login #input-email .help-inline').html('Введите e-mail');
+  } else
+    if(regexp_email.test($('#modal-login #form-login  #email').val()) == false) {
+      $('#modal-login #form-login #input-email').addClass('error');
+      $('#modal-login #form-login #input-email .help-inline').html('Введите корректный e-mail');
+    } else {
+      $('#modal-login #form-login #input-email').removeClass('error');
+      $('#modal-login #form-login #input-email .help-inline').html('');
+    }
+
+  if ($('#modal-login #form-login  #password').val() == '') {
+    $('#modal-login #form-login #input-password').addClass('error')
+    $('#modal-login #form-login #input-password .help-inline').html('Введите пароль');
+  } else
+    if($('#modal-login #form-login  #password').val().length < 3) {
+      $('#modal-login #form-login #input-password').addClass('error');
+      $('#modal-login #form-login #input-password .help-inline').html('Пароль не может быть короче трех символов');
+    } else {
+      $('#modal-login #form-login #input-password').removeClass('error');
+      $('#modal-login #form-login #input-password .help-inline').html('');
+    }
 <% end %>
