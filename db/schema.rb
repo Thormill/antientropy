@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20111216093540) do
   end
 
   add_index "users", ["activation_code"], :name => "index_users_on_activation_code"
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["last_logout_at", "last_activity_at"], :name => "index_users_on_last_logout_at_and_last_activity_at"
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
 

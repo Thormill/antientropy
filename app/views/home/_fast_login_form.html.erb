@@ -1,4 +1,4 @@
-<%= form_tag(:login, method: :post, id: 'form-login', class: 'pull-right') do %>
+<%= form_tag(:login, method: :post, remote: true, id: 'form-fast-login', class: 'pull-right') do %>
 
   <%= text_field_tag :email, nil, placeholder: 'E-mail' %>
   <%= password_field_tag :password, nil, class: 'input-small', placeholder: 'Пароль' %>

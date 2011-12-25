@@ -3,10 +3,9 @@ class SessionsController < ApplicationController
 
   def create
     login(params[:email], params[:password], params[:remember])
-    if logged_in?
-      redirect_to :root
-    else
-      redirect_to :root
+    
+    respond_to do |format|
+      format.js
     end
   end
 
