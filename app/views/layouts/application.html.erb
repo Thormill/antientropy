@@ -2,13 +2,18 @@
 <html>
 <head>
   <title>CheckPoint</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= yield :stylesheets if content_for? :stylesheets %>	
   <%= csrf_meta_tags %>
 </head>
 <body>
   
   <%= yield %>
 
+<footer>
+  <p>1</p>
+</footer>
+<%= javascript_include_tag "application" %>
+<%= yield :javascripts if content_for? :javascripts %>
 </body>
 </html>

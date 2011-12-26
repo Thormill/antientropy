@@ -25,6 +25,9 @@ Antientropy::Application.routes.draw do
   match 'register' => 'users#create', :as => :register
   match ':id/activate' => 'users#activate'
 
+# user cabinet
+  match 'profile/:name' => 'profile#index', :as => :profile
+
 # administrator control
   match 'admin' => 'admin#index', :as => :admin
   match 'admin/userlist' => 'admin#users', :as => :users_admin
@@ -45,8 +48,5 @@ Antientropy::Application.routes.draw do
     get :callback
   end
   match "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
-  
-# personal page
-  match ':name' => 'cabinet#index', :as => :cabinet
 
 end

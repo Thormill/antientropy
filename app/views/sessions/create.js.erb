@@ -1,8 +1,15 @@
 var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 <% if logged_in? %>
+
+  sHtml  = '<div class="alert-message success">';
+  sHtml += '  <strong><%= I18n.t('user.login.done') %></strong><br/>';
+  sHtml += '</div>';
+
+  $('#form-login').html(sHtml);
   $('#modal-login').modal('hide');
-  window.location = '/<%= current_user.name %>'
+
+  window.location = '/profile/<%= current_user.name %>'
 <% else %>
   if ($('#modal-login').css('display') == 'none') { 
     $('#modal-login #form-login  #email').val($('#form-fast-login  #email').val());

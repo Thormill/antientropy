@@ -1,0 +1,58 @@
+<div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
+  <div class="fill">
+    <div class="container-fluid">
+      <a class="brand" href="#">CheckPoint</a>
+      <ul class="nav">
+        <li><a href="#">Чатики</a></li>
+      </ul>
+
+      <% if logged_in?%>
+        <ul class="nav secondary-nav">
+          <li class="menu"><a href="#" class="menu"><%= current_user.name %></a>
+            <ul class="menu-dropdown">
+              <li><a href="#">1</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Выход", :logout %></li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+        
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="sidebar" style="height:500px; ">
+    <div class="well">
+      <h5>Нашивочки и пискометрики</h5>
+    </div>
+  
+  </div>
+
+  <div class="content">
+    <div class="hero-unit">
+      <h3>Карта</h3>
+    </div>
+      
+    <div class="row">
+      <div class="span6">
+        <h3>Текущее заданьеце</h3>
+      </div>
+      <div class="span5">
+        <h3>Что-то еще</h3>
+      </div>
+      <div class="span5">
+        <h3>Чатики</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :stylesheets do %>
+  <% stylesheet_link_tag "profile" %>
+<% end %>
+
+<% content_for :javascripts do %>
+  <% javascript_include_tag "profile" %>
+<% end %>

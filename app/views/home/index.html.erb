@@ -47,10 +47,6 @@
   </div>
 </div>
 
-<footer>
-  <p>1</p>
-</footer>
-
 ​<div id="modal-reg" class="modal hide fade" style="display: none; width: 610px; ">
   <div class="modal-header">
     <a href="#" class="close">×</a>
@@ -70,3 +66,11 @@
     <%= render 'login_form' %>
   </div>
 </div>
+
+<% content_for :stylesheets do %>
+  <% stylesheet_link_tag "home" %>
+<% end %>
+
+<% content_for :javascripts do %>
+  <% javascript_include_tag "home" %>
+<% end %>
