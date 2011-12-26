@@ -1,4 +1,4 @@
-var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+var regexp_email = /^[A-Za-z0-9_\-]+$/;
 
 <% if logged_in? %>
 
@@ -9,27 +9,27 @@ var regexp_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
   $('#form-login').html(sHtml);
   $('#modal-login').modal('hide');
 
-  window.location = '/profile/<%= current_user.name %>'
+  window.location = '/profile'
 <% else %>
   if ($('#modal-login').css('display') == 'none') { 
-    $('#modal-login #form-login  #email').val($('#form-fast-login  #email').val());
+    $('#modal-login #form-login  #email_name').val($('#form-fast-login  #email_name').val());
     $('#modal-login #form-login  #password').val($('#form-fast-login  #password').val());
+    $('#modal-login').modal('show');
   }
 
-  $('#modal-login').modal('show');
   $('#modal-login #form-login #form-error').addClass('alert-message error');
   $('#modal-login #form-login #form-error').html('<strong><%= I18n.t('error') %></strong> <%= I18n.t('user.login.error') %>');
 
-  if ($('#modal-login #form-login  #email').val() == '') {
-    $('#modal-login #form-login #input-email').addClass('error')
-    $('#modal-login #form-login #input-email .help-inline').html('Введите e-mail');
+  if ($('#modal-login #form-login  #email_name').val() == '') {
+    $('#modal-login #form-login #input-email-name').addClass('error')
+    $('#modal-login #form-login #input-email-name .help-inline').html('Введите e-mail или имя персонажа');
   } else
-    if(regexp_email.test($('#modal-login #form-login  #email').val()) == false) {
-      $('#modal-login #form-login #input-email').addClass('error');
-      $('#modal-login #form-login #input-email .help-inline').html('Введите корректный e-mail');
+    if(regexp_email.test($('#modal-login #form-login  #email_name').val()) == false) {
+      $('#modal-login #form-login #input-email-name').addClass('error');
+      $('#modal-login #form-login #input-email-name .help-inline').html('Введите корректное имя \\ e-mail ');
     } else {
-      $('#modal-login #form-login #input-email').removeClass('error');
-      $('#modal-login #form-login #input-email .help-inline').html('');
+      $('#modal-login #form-login #input-email-name').removeClass('error');
+      $('#modal-login #form-login #input-email-name .help-inline').html('');
     }
 
   if ($('#modal-login #form-login  #password').val() == '') {

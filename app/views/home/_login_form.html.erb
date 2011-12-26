@@ -1,10 +1,10 @@
 <%= form_tag(:login, method: :post, remote: true, id: 'form-login', class: 'form-stacked') do %>
   <div id="form-error"></div>
   <fieldset>
-    <div id="input-email" class="clearfix">
-      <%= label_tag :email, 'E-mail:' %>
+    <div id="input-email-name" class="clearfix">
+      <%= label_tag :email_name, 'E-mail или Имя персонажа:' %>
       <div class="input">
-        <%= text_field_tag :email, nil, class: 'xlarge' %>
+        <%= text_field_tag :email_name, nil, class: 'xlarge' %>
         <span class="help-inline"></span>
       </div>
     </div>

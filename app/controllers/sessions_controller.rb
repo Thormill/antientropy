@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   respond_to :js, only: :create
 
   def create
-    login(params[:email], params[:password], params[:remember])
+    login(params[:email_name], params[:password], params[:remember])
   end
 
   def destroy

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :only => [:update]
-  skip_before_filter :require_login, :only => [:create, :activate]
+  before_filter :require_login, only: :update
+  skip_before_filter :require_login, only: [:create, :activate]
+  respond_to :js, only: :create
 
   def create
     @user = User.new(params[:user])

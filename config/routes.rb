@@ -26,7 +26,8 @@ Antientropy::Application.routes.draw do
   match ':id/activate' => 'users#activate'
 
 # user cabinet
-  match 'profile/:name' => 'profile#index', :as => :profile
+  match 'profile' => 'profile#index'
+  match 'profile/:name' => 'profile#show'
 
 # administrator control
   match 'admin' => 'admin#index', :as => :admin
