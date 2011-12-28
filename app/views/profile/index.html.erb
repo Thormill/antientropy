@@ -44,6 +44,12 @@
       </div>
       <div class="span5">
         <h3>Чатики</h3>
+        <div id="chat">
+        </div>
+        <%= form_tag profile_chat_path, remote: true do %>
+            <%= text_field_tag :message %>
+            <%= button_tag :send %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -54,5 +60,5 @@
 <% end %>
 
 <% content_for :javascripts do %>
-  <% javascript_include_tag "profile" %>
+  <% javascript_include_tag 'http://localhost:9292/faye.js', 'profile' %>
 <% end %>

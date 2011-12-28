@@ -27,8 +27,10 @@ Antientropy::Application.routes.draw do
 
 # user cabinet
   match 'profile' => 'profile#index'
+  match 'profile/chat' => 'profile#new_message', as: :profile_chat
   match 'profile/:name' => 'profile#show'
-
+  
+   
 # administrator control
   match 'admin' => 'admin#index', :as => :admin
   match 'admin/userlist' => 'admin#users', :as => :users_admin
