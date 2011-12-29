@@ -6,6 +6,7 @@ gem 'bootstrap-sass'
 gem 'sorcery'
 gem 'therubyracer'
 gem 'jquery-rails'
+gem 'faye'
 
 group :assets do
   gem 'sass-rails'

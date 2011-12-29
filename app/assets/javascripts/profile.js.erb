@@ -1,0 +1,9 @@
+//= require bootstrap-dropdown
+//= require bootstrap-tabs
+
+$(function() {
+  var channel_common = new Faye.Client('<%= FAYE_HOST %>faye');
+  channel_common.subscribe('/channel_common', function (data) {
+    $('#chat-common-messages').append('<div>' + data + '</div>');
+  });
+});

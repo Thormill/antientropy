@@ -29,6 +29,9 @@ Antientropy::Application.routes.draw do
   match 'profile' => 'profile#index'
   match 'profile/:name' => 'profile#show'
 
+# user profile messages
+  match 'messages/new' => 'messages#new'
+
 # administrator control
   match 'admin' => 'admin#index', :as => :admin
   match 'admin/userlist' => 'admin#users', :as => :users_admin

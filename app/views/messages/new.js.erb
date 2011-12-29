@@ -1,0 +1,4 @@
+<% broadcast "/channel_common" do %>
+  <% escape_javascript "#{current_user.name} : #{@message}" %>
+<% end %>
+$("#message").val('');
